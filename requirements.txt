@@ -1,0 +1,4 @@
+# requirements.txt
+pymongo
+python-dotenv
+flask
