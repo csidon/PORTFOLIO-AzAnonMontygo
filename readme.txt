@@ -41,6 +41,7 @@ https://techoverflow.net/2022/02/03/how-to-fix-tox-attributeerror-module-virtual
 
 # Activate the virtual environment
 source venv/bin/activate
+venv\Scripts\activate.bat (on localhost Windows)
 
 # Install the requirements
 pip3 install -r requirements.txt 
@@ -73,6 +74,8 @@ sudo systemctl restart nginx
 # Make sure you're in the AzAnonMontygo directory, then run app
 gunicorn --workers=3 runner:app
 
+
+#---- ALMOST DONE...!!  ------------------
 # Open <<VMIPaddress>> in browser and check if it's working 
 # If working, add a flag that allows the app to run in the background
 gunicorn --workers=3 runner:app --daemon
