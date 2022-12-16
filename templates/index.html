@@ -2,94 +2,204 @@
 <html>    
 <head>    
 <meta name="viewport" content="width=device-width, initial-scale=1">    
-<style>    
-* {    
-  box-sizing: border-box;    
-}    
-    
-input[type=text], select, textarea {    
-  width: 100%;    
-  padding: 12px;    
-  border: 1px solid rgb(70, 68, 68);    
-  border-radius: 4px;    
-  resize: vertical;    
-}    
-input[type=email], select, textarea {    
-  width: 100%;    
-  padding: 12px;    
-  border: 1px solid rgb(70, 68, 68);    
-  border-radius: 4px;    
-  resize: vertical;    
-}    
-    
-label {    
-  padding: 12px 12px 12px 0;    
-  display: inline-block;    
-}    
-    
-input[type=submit] {    
-  background-color: rgb(37, 116, 161);    
-  color: white;    
-  padding: 12px 20px;    
-  border: none;    
-  border-radius: 4px;    
-  cursor: pointer;    
-  float: right;    
-}    
-    
-input[type=submit]:hover {    
-  background-color: #45a049;    
-}    
-    
-.container {    
-  border-radius: 5px;    
-  background-color: #f2f2f2;    
-  padding: 20px;    
-}    
-    
-.col-25 {    
-  float: left;    
-  width: 25%;    
-  margin-top: 6px;    
-}    
-    
-.col-75 {    
-  float: left;    
-  width: 75%;    
-  margin-top: 6px;    
-}    
-    
-/* Clear floats after the columns */    
-.row:after {    
-  content: "";    
-  display: table;    
-  clear: both;    
-}    
-    
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */    
-</style>    
-</head>    
-<body>    
-<h2>Fully Anonymous Feedback</h2>    
-<div class="container">    
-  <form id="survey-form"
-    method="POST"
-    onsubmit="runCode(refresh_db_data)"
-    action="/upload">    
-    <div class="rowTab">
-        <div class="labels">
-          <label for="feedback">What do you think of Cotiss? </label>
-        </div>
-        <div class="rightTab">
-          <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="feedback" placeholder="We want to keep improving and your honest opinion makes this possible!"></textarea>
-        </div>
-      </div>
+<style> 
+*, :after, :before {
+    box-sizing: border-box;
+}
 
-      
-      <button id="submit" type="submit">Submit</button>
-      <!-- <button id="reset" type="reset">Reset</button> -->
-  </form>    
-</div>    
-    
+
+h1, h2, p, label, body {
+    font-family: DM Sans,sans-serif;
+    font-style: normal;
+    text-decoration: none;
+    line-height: 1;
+/*    margin: 0 0 1.4rem;*/
+    color: #374151;
+}
+
+h1, h2 {
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+
+label {
+    font-size: 16px;
+    padding: 30px;
+}
+
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 12px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: vertical;
+  outline: none;
+  margin:20px;
+}
+
+textarea:focus {
+  border: 2px solid #05CA86;
+}
+
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: #01033b;
+  box-shadow: 0 5px 10px rgba(154,161,177,.1);
+  position: fixed;
+  width: 100%;
+  z-index: 12;
+  padding:20px;
+}
+
+body {
+  margin-top: 120px;
+  padding: 30px;
+  align-content: center;
+
+}
+
+main {
+    color: white;
+}
+
+.kl-header {
+    background-color: #01033b;
+    box-shadow: 0 5px 10px rgba(154,161,177,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 12;
+}
+.kl-navbar {
+    align-items: center;
+    display: flex;
+}
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 1240px;
+    padding: 0 20px;
+}
+
+
+.button, .button_cta a, button {
+    background-color: #05ca86;
+    border: 1px solid #05ca86;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: DM Sans,sans-serif;
+    font-size: .75rem;
+    font-weight: 700;
+    height: auto;
+    letter-spacing: .03em;
+    line-height: 1.1;
+    margin: 0;
+    padding: 15px 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .15s linear;
+    white-space: normal;
+    width: auto;
+    word-break: break-word;
+}
+
+.container {
+  padding: 10px
+}
+
+.container-quote {
+  width: 90%;
+  padding: 25px;
+  margin: auto;
+  margin-top: 30px;
+  border: 1px solid #b0d2cb;
+  color: #05ca86;
+  border-left-width:10px;
+}
+
+.quote-text {
+  font-size:14px;
+  font-style: italic;
+  line-height:1.5;
+}
+
+.quote-text--intro {
+  font-weight: bold;
+  font-style:normal;
+  text-align: left;
+}
+
+.quote-text::before {
+  content: "\201c";
+  font-size:100px;
+  color:#009578;
+  display: block;
+  margin-bottom: -70px;
+  margin-top:-20px;
+}
+</style>    
+</head>
+
+<!-- HTML PORTION OF THE FILE -->
+   
+<header class="k1-header">
+  <nav class="kl-navbar content-wrapper">
+    <a href="/?hsLang=en">
+      <img src="https://www.cotiss.com/hubfs/Fill%2013.svg" alt="Cotiss" style="max-width: 100%; height: auto;" loading="" class="kl-navbar__logo">
+    </a>
+  </nav>
+</header>
+
+<body> 
+  <div class="container">
+    <center>
+      <h1>What's on your mind?</h1>
+
+      <label for="feedback">You can be honest - This submission is anonymous </label>
+    </center>
+  </div>
+  <div class="container">
+    <center>
+          
+        <form id="survey-form"
+          method="POST"
+          onsubmit="runCode(refresh_db_data)"
+          action="/upload">    
+              
+              <div>
+                <textarea id="comments" name="feedback" placeholder="We want to keep improving and your honest opinion makes this possible!"></textarea>
+              </div>
+
+          <button id="submit" type="submit">SUBMIT</button>
+            <!-- <button id="reset" type="reset">Reset</button> -->
+        </form>    
+      </div>   
+    </center> 
+
+  <!-- /* Shows an anonymous quote from the database */ -->
+  <div class="container-quote"> 
+    <p class="quote-text--intro"> What others have said: </h2>
+    <p class="quote-text">{{ feedback }} </p>
+
+  </div>   
+  <p style="font-size: 12px"><i>Note: This database comes pre-loaded with 120 reviews. You can view all the reviews by going to /showData</i></p>
+
 </body>    
 </html>    

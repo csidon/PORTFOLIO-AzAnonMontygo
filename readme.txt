@@ -41,6 +41,7 @@ https://techoverflow.net/2022/02/03/how-to-fix-tox-attributeerror-module-virtual
 
 # Activate the virtual environment
 source venv/bin/activate
+venv\Scripts\activate.bat (on localhost Windows)
 
 # Install the requirements
 pip3 install -r requirements.txt 
