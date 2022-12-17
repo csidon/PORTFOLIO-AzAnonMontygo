@@ -79,3 +79,10 @@ gunicorn --workers=3 runner:app
 # Open <<VMIPaddress>> in browser and check if it's working 
 # If working, add a flag that allows the app to run in the background
 gunicorn --workers=3 runner:app --daemon
+
+
+#########################################################
+# Error logs can be found at:
+#=======================================================
+tail -f /var/log/nginx/access.log
+tail -f /var/log/nginx/error.log
