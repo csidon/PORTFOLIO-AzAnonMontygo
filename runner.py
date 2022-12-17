@@ -88,7 +88,7 @@ def upload():
         data["feedback"] = request.form['feedback']
     collection.insert_one(data)
     print("Collections available now are: ", db.list_collection_names())
-    return render_template("index.html")
+    return hello_world()
 
 
 
