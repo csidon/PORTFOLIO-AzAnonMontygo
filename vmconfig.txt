@@ -1,0 +1,3 @@
+# vmconfig.txt
+nginx
+python3-pip
