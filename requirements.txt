@@ -1,5 +1,4 @@
 # requirements.txt
-nginx
 python3
 pymongo
 python-dotenv
