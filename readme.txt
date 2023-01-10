@@ -45,7 +45,10 @@ venv\Scripts\activate.bat (on localhost Windows)
 
 # Install the requirements
 pip3 install -r requirements.txt 
+or
 pip install -r requirements.txt 
+
+# Open runner.py and replace CONNECTION_STRING, DB_NAME and COLLECTION_NAME with your database details
 
 # Run the program (on localhost)
 python runner.py
