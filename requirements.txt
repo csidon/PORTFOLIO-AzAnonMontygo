@@ -1,5 +1,4 @@
 # requirements.txt
-python3
 pymongo
 python-dotenv
 flask

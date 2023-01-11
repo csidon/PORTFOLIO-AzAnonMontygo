@@ -1,11 +1,12 @@
 #################################################################
 #    Instructions to install AzAnonymous
 #================================================================
-# This assumes you already have Nginx installed on your Ubuntu VM
-# with your MongoDB hosted on CosmosDB
+# This assumes you have already created your MongoDB database, 
+# hosted on CosmosDB
 #-----------------------------------------------------------------
 # Tech stack: 
 # Ubuntu 20.04.5 LTS and above
+# Nginx
 # MongoDB (hosted on Azure CosmosDB)
 # Python3 (python3-pip, pymongo, python-dotenv)
 # Flask
@@ -15,8 +16,10 @@
 # Clone project into a directory
 git clone https://github.com/csidon/AzAnonMontygo.git
 
+# Install nginx
+
 #If pip is not already in your system
-sudo apt-get install python3-pip instead
+sudo apt-get install python3-pip
 
 # Change directory to AzAnonMontygo
 cd AzAnonMontygo
@@ -50,10 +53,10 @@ pip install -r requirements.txt
 
 # Open runner.py and replace CONNECTION_STRING, DB_NAME and COLLECTION_NAME with your database details
 
-# Run the program (on localhost)
+# Test run the program (on localhost)
 python runner.py
 
-# Run the program (on VM, ubuntu/nginx)
+# Test run the program (on VM, ubuntu/nginx)
 export FLASK_APP=runner.py
 flask run -h 0.0.0.0
 
