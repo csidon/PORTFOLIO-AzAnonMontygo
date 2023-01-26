@@ -21,9 +21,6 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: '3.11'
-      
-      - name: Enter directory
-        run: cd AzAnonMontygo
 
       - name: Create and start virtual environment
         run: |
@@ -63,4 +60,4 @@ jobs:
         with:
           app-name: 'AzAnonWebAppFree'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_37B573C3C9B54BBAA717E84A76CC5B39 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A3050AC781F84A40A835AA1987CF87D9 }}
